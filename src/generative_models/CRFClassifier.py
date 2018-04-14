@@ -1,5 +1,5 @@
 from collections import Counter
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import scipy.stats
 from sklearn.metrics import make_scorer
 from sklearn.model_selection import cross_val_score
@@ -68,24 +68,24 @@ class CRFClassifier:
         )
         return metrics.flat_classification_report(y_test, y_pred, labels=sorted_labels, digits=3)
 
-    def visualize_parameter_space(self):
-        plt.style.use('ggplot')
-        _x = [s.parameters['c1'] for s in self._best_crf_model.grid_scores_]
-        _y = [s.parameters['c2'] for s in self._best_crf_model.grid_scores_]
-        _c = [s.mean_validation_score for s in self._best_crf_model.grid_scores_]
-
-        fig = plt.figure()
-        fig.set_size_inches(12, 12)
-        ax = plt.gca()
-        ax.set_yscale('log')
-        ax.set_xscale('log')
-        ax.set_xlabel('C1')
-        ax.set_ylabel('C2')
-        ax.set_title("Randomized Hyperparameter Search CV Results (min={:0.3}, max={:0.3})".format(
-            min(_c), max(_c)
-        ))
-        ax.scatter(_x, _y, c=_c, s=60, alpha=0.9, edgecolors=[0, 0, 0])
-        print("Dark blue => {:0.4}, dark red => {:0.4}".format(min(_c), max(_c)))
+    # def visualize_parameter_space(self):
+    #     plt.style.use('ggplot')
+    #     _x = [s.parameters['c1'] for s in self._best_crf_model.grid_scores_]
+    #     _y = [s.parameters['c2'] for s in self._best_crf_model.grid_scores_]
+    #     _c = [s.mean_validation_score for s in self._best_crf_model.grid_scores_]
+    #
+    #     fig = plt.figure()
+    #     fig.set_size_inches(12, 12)
+    #     ax = plt.gca()
+    #     ax.set_yscale('log')
+    #     ax.set_xscale('log')
+    #     ax.set_xlabel('C1')
+    #     ax.set_ylabel('C2')
+    #     ax.set_title("Randomized Hyperparameter Search CV Results (min={:0.3}, max={:0.3})".format(
+    #         min(_c), max(_c)
+    #     ))
+    #     ax.scatter(_x, _y, c=_c, s=60, alpha=0.9, edgecolors=[0, 0, 0])
+    #     print("Dark blue => {:0.4}, dark red => {:0.4}".format(min(_c), max(_c)))
 
     def print_top_positive_features(self):
         print("Top positive:")
