@@ -32,7 +32,7 @@ if __name__ == '__main__':
         x_train = [fm.sent2features(sent, pos_tag=False, title_feature=True, upper_case_feature=True) for sent in processed_train_data]
         y_train = [fm.sent2labels(sent) for sent in processed_train_data]
 
-        x_test = [fm.sent2features(sent) for sent in processed_test_data]
+        x_test = [fm.sent2features(sent, pos_tag=False, title_feature=True, upper_case_feature=True) for sent in processed_test_data]
         y_test = [fm.sent2labels(sent) for sent in processed_test_data]
 
         crf_model = crf()
