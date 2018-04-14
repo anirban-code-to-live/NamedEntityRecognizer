@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     input_sentences = np.array(input_sentences).reshape((len(input_sentences), 1))
 
-    input_sentences = input_sentences[0:1000, :]
+    # input_sentences = input_sentences[0:1000, :]
 
     kf = KFold(n_splits=2, shuffle=True, random_state=2)  # Hyperparameters : shuffle in KFold
     for train_index, test_index in kf.split(input_sentences):
