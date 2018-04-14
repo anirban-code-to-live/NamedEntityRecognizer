@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     input_sentences = np.array(input_sentences).reshape((len(input_sentences), 1))
 
-    input_sentences = input_sentences[0:10, :]
+    input_sentences = input_sentences[0:1000, :]
 
     kf = KFold(n_splits=2, shuffle=True, random_state=2)  # Hyperparameters : shuffle in KFold
     for train_index, test_index in kf.split(input_sentences):
@@ -29,10 +29,7 @@ if __name__ == '__main__':
         processed_train_data = tp.process_input_data(train_data)
         processed_test_data = tp.process_input_data(test_data)
 
-        # print(len(processed_train_data), len(processed_test_data))
-        # print(processed_train_data[0])
-
-        x_train = [fm.sent2features(sent) for sent in processed_train_data]
+        x_train = [fm.sent2features(sent, pos_tag=False, title_feature=True, upper_case_feature=True) for sent in processed_train_data]
         y_train = [fm.sent2labels(sent) for sent in processed_train_data]
 
         x_test = [fm.sent2features(sent) for sent in processed_test_data]

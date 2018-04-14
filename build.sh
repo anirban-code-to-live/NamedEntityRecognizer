@@ -1,2 +1,2 @@
 export PYTHONPATH='.'
-python src/Main.py
+python3 src/Main.py
