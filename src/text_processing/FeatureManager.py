@@ -1,4 +1,4 @@
-def word2features(sent, i, pos_tag, title_feature, upper_case_feature):
+def word2features(sent, i, pos_tag, title_feature, upper_case_feature, embed_feature, similar_feature):
     word = sent[i][0]
 
     features = {
@@ -35,6 +35,14 @@ def word2features(sent, i, pos_tag, title_feature, upper_case_feature):
     # Handling of title feature
     if title_feature:
         __add_title_feature(sent, i, features)
+
+    # Handle embedding feature
+    if embed_feature:
+        __add_word_embedding_feature(sent, i, features)
+
+    # Handle similar word feature
+    if similar_feature:
+        __add_most_similar_word_feature(sent, i, features)
 
     return features
 
@@ -101,13 +109,29 @@ def __add_title_feature(sent, i,  features):
         })
 
 
-def sent2features(sent, pos_tag=False, title_feature=False, upper_case_feature=False):
-    return [word2features(sent, i, pos_tag, title_feature, upper_case_feature) for i in range(len(sent))]
+def __add_most_similar_word_feature(sent, i, features):
+    similar_word = sent[i][4]
+    if similar_word is not None:
+        features.update({
+            'word.most_similar': similar_word
+        })
+
+
+def __add_word_embedding_feature(sent, i, features):
+    word_embedding = sent[i][3]
+    if word_embedding is not None:
+        features.update({
+            'word_embedding' : word_embedding
+        })
+
+
+def sent2features(sent, pos_tag=False, title_feature=False, upper_case_feature=False, embed=False, similar=False):
+    return [word2features(sent, i, pos_tag, title_feature, upper_case_feature, embed, similar) for i in range(len(sent))]
 
 
 def sent2labels(sent):
-    return [label for token, pos_tag, label in sent]
+    return [label for token, pos_tag, label, _, _ in sent]
 
 
 def sent2tokens(sent):
-    return [token for token, pos_tag, label in sent]
+    return [token for token, pos_tag, label, _, _ in sent]

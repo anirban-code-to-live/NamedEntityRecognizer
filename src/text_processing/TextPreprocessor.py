@@ -5,6 +5,8 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.text import text_to_word_sequence
 
 from src.text_processing import Tokenization
+from src.text_processing.Word2Vec import generate_embedding
+from src.text_processing import Word2Vec
 
 
 class TextProcessor:
@@ -99,14 +101,36 @@ class TextProcessor:
                 word = word_and_label.split(' ')[0]
                 label = word_and_label.split(' ')[1]
                 pos_word = Tokenization.tag_pos(word)[0][1]
-                input_sent.append((word, pos_word, label))
+                embedding = str(Word2Vec.get_embedding(word))
+                most_similar_word = Word2Vec.get_most_similar_word(word)
+                input_sent.append((word, pos_word, label, embedding, most_similar_word))
                 # wordnet_synonym = WordnetEmbedding.get_synonym(word)
-                # output_file.write(word + ' ' + pos_word + ' ' + label + '\n')
-            # output_file.write('\n')
             processed_data.append(input_sent)
         return processed_data
 
+    @staticmethod
+    def save_sentences_without_label(sentences, output_file_path):
+        output_file = open(output_file_path, 'a')
+        for sent in sentences:
+            word_and_label_list = sent[0].splitlines()
+            for word_and_label in word_and_label_list:
+                word = word_and_label.split(' ')[0]
+                output_file.write(word + ' ')
+            output_file.write('\n')
+        output_file.close()
 
+    @staticmethod
+    def generate_word2vec_embeddings(sentences):
+        processed_sentences = []
+        for sent in sentences:
+            word_and_label_list = sent[0].splitlines()
+            input_sent = []
+            for word_and_label in word_and_label_list:
+                word = word_and_label.split(' ')[0]
+                input_sent.append(word)
+            processed_sentences.append(input_sent)
+
+        generate_embedding(processed_sentences)
 
 
 

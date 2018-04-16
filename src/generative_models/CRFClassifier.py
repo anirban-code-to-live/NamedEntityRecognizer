@@ -1,5 +1,6 @@
 from collections import Counter
 # import matplotlib.pyplot as plt
+import os
 import scipy.stats
 from sklearn.metrics import make_scorer
 from sklearn.model_selection import cross_val_score
@@ -27,7 +28,7 @@ class CRFClassifier:
         self._best_crf_model = None
         self._labels = None
 
-    def train(self, x_train,y_train):
+    def train(self, x_train, y_train):
         self._crf_model.fit(x_train, y_train)
         self._labels = list(self._crf_model.classes_)
         f1_scorer = make_scorer(metrics.flat_f1_score, average='weighted', labels=self._labels)
@@ -43,10 +44,15 @@ class CRFClassifier:
         print('best CV score:', self._best_crf_model.best_score_)
         print('model size: {:0.2f}M'.format(self._best_crf_model.best_estimator_.size_ / 1000000))
 
+        CRFClassifier.write_to_output_file('\nbest params:' + str(self._best_crf_model.best_params_))
+        CRFClassifier.write_to_output_file('best CV score:' + str(self._best_crf_model.best_score_))
+        CRFClassifier.write_to_output_file('model size: {:0.2f}M'.format(self._best_crf_model.best_estimator_.size_ / 1000000))
+
     def test(self, test_x):
         return self._crf_model.predict(test_x)
 
     def get_average_f1_score(self, x_test, y_test):
+        # self._labels = list(self._crf_model.classes_)
         # y_pred = self._crf_model.predict(x_test)
         crf = self._best_crf_model.best_estimator_
         y_pred = crf.predict(x_test)
@@ -66,7 +72,9 @@ class CRFClassifier:
             labels,
             key=lambda name: (name[1:], name[0])
         )
-        return metrics.flat_classification_report(y_test, y_pred, labels=sorted_labels, digits=3)
+        report = metrics.flat_classification_report(y_test, y_pred, labels=sorted_labels, digits=3)
+        CRFClassifier.write_to_output_file(report)
+        return report
 
     # def visualize_parameter_space(self):
     #     plt.style.use('ggplot')
@@ -89,16 +97,19 @@ class CRFClassifier:
 
     def print_top_positive_features(self):
         print("Top positive:")
-        CRFClassifier.__print_state_features(Counter(self._best_crf_model.state_features_).most_common(30))
+        CRFClassifier.write_to_output_file("\nTop positive:")
+        CRFClassifier.__print_state_features(Counter(self._best_crf_model.best_estimator_.state_features_).most_common(5))
 
     def print_top_negative_features(self):
         print("\nTop negative:")
-        CRFClassifier.__print_state_features(Counter(self._best_crf_model.state_features_).most_common()[-30:])
+        CRFClassifier.write_to_output_file("\nTop negative:")
+        CRFClassifier.__print_state_features(Counter(self._best_crf_model.best_estimator_.state_features_).most_common()[-5:])
 
     @staticmethod
     def __print_state_features(state_features):
         for (attr, label), weight in state_features:
             print("%0.6f %-8s %s" % (weight, label, attr))
+            CRFClassifier.write_to_output_file("%0.6f %-8s %s" % (weight, label, attr))
 
     @staticmethod
     def __accuracy(y_prediction, y_test):
@@ -106,3 +117,10 @@ class CRFClassifier:
         test_data_count = len(y_test)
         correct_classification_count = len([i for i, j in zip(y_prediction, y_test) if i == int(j)])
         return correct_classification_count / test_data_count
+
+    @staticmethod
+    def write_to_output_file(data):
+        path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'output_data')
+        output_file = open(os.path.join(path, 'report_fffff.txt'), 'a')
+        output_file.write(data + '\n')
+        output_file.close()
