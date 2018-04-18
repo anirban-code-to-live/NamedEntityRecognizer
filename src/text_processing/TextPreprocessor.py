@@ -132,6 +132,20 @@ class TextProcessor:
 
         generate_embedding(processed_sentences)
 
+    @staticmethod
+    def get_data_distribution(sentences):
+        data_dict = {'O' : 0, 'D': 0, 'T': 0}
+        for sent in sentences:
+            word_and_label_list = sent.splitlines()
+            for word_and_label in word_and_label_list:
+                label = word_and_label.split(' ')[1]
+                if label == 'O':
+                    data_dict['O'] = data_dict['O'] + 1
+                elif label == 'D':
+                    data_dict['D'] = data_dict['D'] + 1
+                else:
+                    data_dict['T'] = data_dict['T'] + 1
+        print(data_dict)
 
 
 

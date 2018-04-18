@@ -24,13 +24,16 @@ if __name__ == '__main__':
     output_file = open(os.path.join(project_data_path, 'ner_pos.txt'), 'a')
     input_sentences = input_file.read().split('\n\n')
 
+    tp.get_data_distribution(input_sentences)
+
     input_sentences = np.array(input_sentences).reshape((len(input_sentences), 1))
 
     tp.save_sentences_without_label(input_sentences, os.path.join(project_data_path, 'ner_sentences.txt'))
 
+    # Test purpose :: small data-set
     # input_sentences = input_sentences[0:100, :]
 
-    kf = KFold(n_splits=10, shuffle=True, random_state=2)  # Hyperparameters : shuffle in KFold
+    kf = KFold(n_splits=10, shuffle=True, random_state=2)  # Hyper-parameters : shuffle in KFold
     for train_index, test_index in kf.split(input_sentences):
         # print('Train : ', train_index, 'Test : ', test_index)
         train_data, test_data = input_sentences[train_index], input_sentences[test_index]
