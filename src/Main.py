@@ -41,18 +41,18 @@ if __name__ == '__main__':
         processed_train_data = tp.process_input_data(train_data)
         processed_test_data = tp.process_input_data(test_data)
 
-        x_train = [fm.sent2features(sent, pos_tag=False,
-                                    title_feature=False,
-                                    upper_case_feature=False,
-                                    embed=False,
-                                    similar=False) for sent in processed_train_data]
+        x_train = [fm.sent2features(sent, pos_tag=True,
+                                    title_feature=True,
+                                    upper_case_feature=True,
+                                    embed=True,
+                                    similar=True) for sent in processed_train_data]
         y_train = [fm.sent2labels(sent) for sent in processed_train_data]
 
-        x_test = [fm.sent2features(sent, pos_tag=False,
-                                   title_feature=False,
-                                   upper_case_feature=False,
-                                   embed=False,
-                                   similar=False) for sent in processed_test_data]
+        x_test = [fm.sent2features(sent, pos_tag=True,
+                                   title_feature=True,
+                                   upper_case_feature=True,
+                                   embed=True,
+                                   similar=True) for sent in processed_test_data]
         y_test = [fm.sent2labels(sent) for sent in processed_test_data]
 
         crf_model = crf()
