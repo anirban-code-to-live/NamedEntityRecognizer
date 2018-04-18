@@ -1,0 +1,52 @@
+
+best params:{'c2': 0.002562491020000813, 'c1': 0.18839792468229538}
+best CV score:0.8724535927442535
+model size: 0.40M
+             precision    recall  f1-score   support
+
+          D      0.795     0.665     0.725      2447
+          O      0.943     0.972     0.957     27956
+          T      0.711     0.529     0.607      1871
+
+avg / total      0.918     0.923     0.919     32274
+
+
+Top negative:
+-2.916567 T        +1:word.lower():that
+-2.948447 O        word.lower():sweating
+-3.054397 O        word.lower():diabetes
+-3.971148 O        word.lower():antibiotics
+-4.123371 O        word[-3:]:ged
+
+Top positive:
+10.074202 D        word.lower():infertility
+8.715439 D        word.lower():cataract
+8.689224 D        word.lower():revascularizations
+8.266661 D        word.lower():tumours
+8.124418 D        word.lower():louse
+
+best params:{'c2': 0.21719681683579758, 'c1': 0.27753053233168395}
+best CV score:0.8684106226425592
+model size: 0.49M
+             precision    recall  f1-score   support
+
+          D      0.783     0.645     0.707      2442
+          O      0.935     0.975     0.955     27854
+          T      0.747     0.456     0.566      1950
+
+avg / total      0.912     0.919     0.913     32246
+
+
+Top negative:
+-1.831318 T        word[-3:]:sus
+-1.939733 O        word.lower():incontinence
+-2.019510 O        word.lower():antibiotics
+-2.462396 O        word[-3:]:tis
+-2.710254 O        word.lower():diabetes
+
+Top positive:
+4.282131 D        word.lower():cancers
+3.458302 T        word.lower():vaccination
+3.186468 D        word.lower():diabetes
+2.963240 D        word.lower():tumors
+2.883245 D        word[-2:]:ia

@@ -1,0 +1,52 @@
+
+best params:{'c2': 0.04304667478944362, 'c1': 0.13418039515375602}
+best CV score:0.8718748053776141
+model size: 0.61M
+             precision    recall  f1-score   support
+
+          D      0.792     0.676     0.729      2447
+          O      0.945     0.972     0.959     27956
+          T      0.731     0.555     0.631      1871
+
+avg / total      0.921     0.926     0.922     32274
+
+
+Top negative:
+-2.208408 O        +1:word.lower():toxin
+-2.364268 O        +1:word.lower():analgesia
+-2.644469 O        word[-3:]:ged
+-3.019243 O        word.lower():antibiotics
+-3.100089 O        word.lower():sweating
+
+Top positive:
+6.329481 D        word.lower():infertility
+5.587375 D        word.lower():hypertension
+5.329802 D        word.lower():cataract
+5.081695 D        word.lower():bacterium
+4.827629 T        word.lower():anticoagulants
+
+best params:{'c2': 0.03815857768143789, 'c1': 0.398116580800865}
+best CV score:0.8703263584607657
+model size: 0.37M
+             precision    recall  f1-score   support
+
+          D      0.778     0.659     0.714      2442
+          O      0.939     0.973     0.956     27854
+          T      0.726     0.492     0.587      1950
+
+avg / total      0.914     0.920     0.915     32246
+
+
+Top negative:
+-2.613608 D        -1:word.lower():shock
+-2.841343 D        word.lower():teratoma
+-3.119800 O        +1:word.lower():represent
+-3.198446 O        -1:word.lower():metastases
+-3.381956 O        word[-3:]:tis
+
+Top positive:
+5.968874 T        word.lower():vaccination
+4.610370 T        word.lower():statins
+4.592972 T        word.lower():slings
+4.527683 D        +1:word.lower():vaccination
+4.466730 T        word.lower():alteplase

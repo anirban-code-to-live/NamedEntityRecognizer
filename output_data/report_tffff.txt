@@ -1,0 +1,52 @@
+
+best params:{'c2': 0.04482578859059859, 'c1': 0.410276677677863}
+best CV score:0.8699951482018204
+model size: 0.34M
+             precision    recall  f1-score   support
+
+          D      0.801     0.648     0.716      2447
+          O      0.940     0.975     0.957     27956
+          T      0.726     0.508     0.597      1871
+
+avg / total      0.917     0.923     0.918     32274
+
+
+Top negative:
+-2.021047 O        word[-3:]:bal
+-2.165137 O        +1:word.lower():patient
+-2.426290 O        word.lower():cancers
+-2.671987 O        word.lower():antibiotics
+-2.940733 O        word[-3:]:ged
+
+Top positive:
+5.479186 D        word.lower():infertility
+5.224831 D        word.lower():hypertension
+5.004780 D        word.lower():cataract
+4.822482 T        word.lower():resection
+4.356224 D        word[-2:]:lc
+
+best params:{'c2': 0.0037235269590337886, 'c1': 0.3842540105900686}
+best CV score:0.8716949889308242
+model size: 0.30M
+             precision    recall  f1-score   support
+
+          D      0.772     0.661     0.712      2442
+          O      0.939     0.973     0.956     27854
+          T      0.752     0.498     0.599      1950
+
+avg / total      0.915     0.921     0.916     32246
+
+
+Top negative:
+-3.746036 T        word[-3:]:sus
+-3.790898 O        word[-3:]:tis
+-3.878547 O        -1:word.lower():metastases
+-4.291421 D        word.lower():teratoma
+-5.620425 O        +1:word.lower():represent
+
+Top positive:
+7.836903 D        word.lower():cancers
+7.706182 T        word.lower():vaccination
+7.346979 T        +1:word.lower():yag
+6.777476 T        word.lower():antidepressants
+6.606130 T        word.lower():statins

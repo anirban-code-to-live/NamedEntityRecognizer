@@ -1,0 +1,260 @@
+
+best params:{'c1': 0.06319238197711298, 'c2': 0.01232563017861715}
+best CV score:0.8749858512048433
+model size: 0.82M
+             precision    recall  f1-score   support
+
+          D      0.753     0.690     0.720       464
+          O      0.947     0.971     0.959      5629
+          T      0.773     0.581     0.664       399
+
+avg / total      0.923     0.927     0.924      6492
+
+
+Top negative:
+-3.863423 D        word.lower():analgesia
+-4.099417 O        word.lower():interferon
+-4.325921 D        +1:word.lower():''
+-4.348255 O        word.lower():incontinence
+-4.367455 O        word.lower():louse
+
+Top positive:
+8.979353 D        word.lower():balding
+8.505602 D        word.lower():revascularizations
+8.093853 D        word.lower():opacification
+8.075294 T        word.lower():slings
+7.883984 T        word.lower():amputation
+
+best params:{'c1': 0.12128949016550937, 'c2': 0.13138703351316044}
+best CV score:0.8749250902327085
+model size: 0.92M
+             precision    recall  f1-score   support
+
+          D      0.830     0.662     0.737       515
+          O      0.942     0.976     0.959      5762
+          T      0.743     0.546     0.629       412
+
+avg / total      0.921     0.926     0.921      6689
+
+
+Top negative:
+-2.629094 O        word.lower():diabetes
+-2.673294 O        word.lower():bleeding
+-2.693307 O        word.lower():cancers
+-2.742077 O        word.lower():antibiotics
+-2.826131 O        word[-3:]:aly
+
+Top positive:
+4.532468 T        word.lower():vaccination
+4.109441 D        word.lower():infertility
+4.103416 T        word.lower():resection
+4.018359 D        word.lower():bleeding
+4.001236 O        word.lower():after
+
+best params:{'c1': 0.33446675037917845, 'c2': 0.028677837276498752}
+best CV score:0.8737747394983915
+model size: 0.52M
+             precision    recall  f1-score   support
+
+          D      0.797     0.659     0.721       501
+          O      0.945     0.969     0.957      5578
+          T      0.686     0.583     0.631       379
+
+avg / total      0.918     0.923     0.920      6458
+
+
+Top negative:
+-2.981096 O        word[-2:]:BV
+-2.994669 D        word.lower():analgesia
+-3.042319 O        word[-3:]:aly
+-3.155136 D        -1:word.lower():shock
+-3.566798 O        word[-3:]:ock
+
+Top positive:
+6.750137 D        word.lower():incontinence
+6.630363 D        word.lower():revascularizations
+6.278643 T        word[-3:]:xel
+6.084758 T        word.lower():slings
+6.032484 D        word.lower():hypertension
+
+best params:{'c1': 0.06804983379302364, 'c2': 0.022925126327000975}
+best CV score:0.8752658323543768
+model size: 0.86M
+             precision    recall  f1-score   support
+
+          D      0.799     0.678     0.734       463
+          O      0.950     0.971     0.961      5315
+          T      0.718     0.617     0.664       342
+
+avg / total      0.926     0.929     0.927      6120
+
+
+Top negative:
+-3.386814 O        word[-3:]:aly
+-3.430447 O        word.lower():diabetes
+-3.554897 O        word.lower():antibiotics
+-3.732337 O        word.lower():incontinence
+-3.829367 O        word.lower():bleeding
+
+Top positive:
+8.268469 D        word.lower():louse
+7.545249 D        word.lower():balding
+7.344799 D        word.lower():revascularizations
+7.343622 D        word.lower():infertility
+7.025057 D        word.lower():hemorrhage
+
+best params:{'c1': 0.382429023842873, 'c2': 0.038808026144412894}
+best CV score:0.8742535196515809
+model size: 0.51M
+             precision    recall  f1-score   support
+
+          D      0.868     0.650     0.743       508
+          O      0.942     0.983     0.962      5694
+          T      0.761     0.503     0.606       348
+
+avg / total      0.927     0.931     0.926      6550
+
+
+Top negative:
+-2.903215 O        word[-2:]:PR
+-2.965518 O        word[-3:]:ock
+-3.066180 O        -1:word.lower():combined
+-3.079085 O        word.lower():cancers
+-3.100003 D        -1:word.lower():shock
+
+Top positive:
+6.598666 D        word.lower():cataract
+6.090611 D        word.lower():revascularizations
+5.844472 T        word.lower():vaccination
+5.526665 D        word.lower():infertility
+5.488532 O        word.lower():after
+
+best params:{'c1': 0.09560995388735948, 'c2': 0.037524524615220246}
+best CV score:0.8750505426738509
+model size: 0.83M
+             precision    recall  f1-score   support
+
+          D      0.816     0.738     0.775       474
+          O      0.958     0.978     0.968      5853
+          T      0.772     0.605     0.679       370
+
+avg / total      0.937     0.940     0.938      6697
+
+
+Top negative:
+-3.153473 D        -1:word.lower():shock
+-3.300374 O        word.lower():diabetes
+-3.458015 O        word.lower():incontinence
+-3.655787 O        word[-3:]:aly
+-3.770621 O        word.lower():louse
+
+Top positive:
+6.445206 D        word.lower():balding
+6.210640 D        word.lower():depression
+6.115983 D        word.lower():hemorrhage
+5.874352 T        word.lower():vaccination
+5.770460 D        word.lower():obesity
+
+best params:{'c1': 0.62800805625296, 'c2': 0.005150566440883008}
+best CV score:0.8737640417132679
+model size: 0.33M
+             precision    recall  f1-score   support
+
+          D      0.764     0.677     0.718       527
+          O      0.928     0.965     0.946      5392
+          T      0.689     0.436     0.534       431
+
+avg / total      0.898     0.906     0.899      6350
+
+
+Top negative:
+-2.909486 O        +1:word.lower():prior
+-3.010188 D        -1:word.lower():shock
+-3.113390 O        word[-3:]:che
+-3.193972 O        word[-2:]:BV
+-3.303172 O        word[-3:]:ock
+
+Top positive:
+7.376942 T        +1:word.lower():yag
+6.902255 T        word.lower():vaccination
+6.338648 D        word.lower():tumors
+6.112787 T        word.lower():fenfluramines
+6.074281 D        word.lower():croup
+
+best params:{'c1': 0.5189938019724425, 'c2': 0.008000761845157765}
+best CV score:0.8740036706548443
+model size: 0.38M
+             precision    recall  f1-score   support
+
+          D      0.852     0.732     0.788       527
+          O      0.934     0.969     0.951      5417
+          T      0.677     0.486     0.566       457
+
+avg / total      0.909     0.915     0.910      6401
+
+
+Top negative:
+-2.942643 O        word[-3:]:ele
+-2.946416 O        -1:word.lower():reduced
+-3.098560 O        word[-3:]:che
+-3.303150 D        -1:word.lower():shock
+-4.199726 O        word[-3:]:ock
+
+Top positive:
+7.655336 T        +1:word.lower():yag
+6.647228 T        word.lower():vaccination
+6.639025 D        word.lower():revascularizations
+6.408033 O        word.lower():versus
+6.267893 D        word.lower():strokes
+
+best params:{'c1': 0.09281950720927121, 'c2': 0.007088622102840833}
+best CV score:0.8720767223218732
+model size: 0.71M
+             precision    recall  f1-score   support
+
+          D      0.698     0.664     0.680       420
+          O      0.959     0.969     0.964      5913
+          T      0.723     0.619     0.667       278
+
+avg / total      0.933     0.935     0.933      6611
+
+
+Top negative:
+-4.313062 O        word[-3:]:tis
+-4.332104 O        word.lower():incontinence
+-4.679702 D        -1:word.lower():shock
+-4.815808 O        word.lower():louse
+-5.356865 D        +1:word.lower():''
+
+Top positive:
+10.306985 D        word.lower():cancers
+9.875999 D        word.lower():revascularizations
+9.875436 D        word.lower():balding
+9.089736 D        word.lower():infarctions
+9.036091 D        word.lower():bleeding
+
+best params:{'c1': 0.5617014423799774, 'c2': 0.002945282909935977}
+best CV score:0.8762152121161878
+model size: 0.35M
+             precision    recall  f1-score   support
+
+          D      0.786     0.637     0.703       490
+          O      0.941     0.972     0.956      5257
+          T      0.795     0.632     0.704       405
+
+avg / total      0.919     0.923     0.920      6152
+
+
+Top negative:
+-2.721379 O        word.lower():cancers
+-3.377081 O        word[-3:]:che
+-3.514632 O        +1:word.lower():represent
+-3.684996 D        -1:word.lower():shock
+-3.895105 O        word[-3:]:ock
+
+Top positive:
+7.867590 T        +1:word.lower():yag
+7.284589 D        word.lower():bleeding
+6.994048 O        word.lower():versus
+6.869296 T        word.lower():alteplase
+6.716410 D        word.lower():revascularizations

@@ -1,0 +1,52 @@
+
+best params:{'c1': 0.5700581656954822, 'c2': 0.0179812718321633}
+best CV score:0.8694400423764264
+model size: 0.26M
+             precision    recall  f1-score   support
+
+          D      0.789     0.658     0.717      2447
+          O      0.941     0.974     0.957     27956
+          T      0.732     0.517     0.606      1871
+
+avg / total      0.918     0.923     0.919     32274
+
+
+Top negative:
+-2.222382 O        word.lower():antibiotics
+-2.226883 O        -1:word.lower():>
+-2.352712 O        word.lower():cancers
+-2.359889 O        word[-3:]:ash
+-2.548209 O        word[-3:]:ged
+
+Top positive:
+5.656556 T        word.lower():resection
+5.545139 D        word.lower():hypertension
+5.453734 D        word.lower():infertility
+5.166170 D        word.lower():cataract
+4.863419 D        word[-2:]:lc
+
+best params:{'c1': 0.1646298451995722, 'c2': 0.061797293569543416}
+best CV score:0.8720234110652582
+model size: 0.52M
+             precision    recall  f1-score   support
+
+          D      0.774     0.658     0.712      2442
+          O      0.938     0.974     0.956     27854
+          T      0.756     0.485     0.591      1950
+
+avg / total      0.915     0.920     0.915     32246
+
+
+Top negative:
+-2.496785 O        +1:word.lower():bladder
+-2.647518 O        -1:word.lower():metastases
+-3.050966 O        word.lower():incontinence
+-3.304347 O        word[-3:]:tis
+-3.652252 O        word.lower():diabetes
+
+Top positive:
+5.983818 D        word.lower():cancers
+5.343334 T        word.lower():vaccination
+4.971419 T        word.lower():alteplase
+4.671610 D        word.lower():hemorrhage
+4.660623 T        word.lower():slings

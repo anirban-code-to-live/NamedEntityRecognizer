@@ -1,0 +1,52 @@
+
+best params:{'c1': 0.17461473212530618, 'c2': 0.04084213046488651}
+best CV score:0.8723374158334651
+model size: 0.57M
+             precision    recall  f1-score   support
+
+          D      0.788     0.681     0.731      2447
+          O      0.946     0.970     0.958     27956
+          T      0.714     0.570     0.634      1871
+
+avg / total      0.921     0.925     0.922     32274
+
+
+Top negative:
+-2.122443 O        word[-3:]:aly
+-2.128486 O        +1:word.lower():patient
+-2.814283 O        word[-3:]:ged
+-2.942589 O        word.lower():sweating
+-3.314424 O        word.lower():antibiotics
+
+Top positive:
+6.250923 D        word.lower():infertility
+5.496326 D        word.lower():cataract
+5.344450 D        word.lower():hypertension
+4.900366 D        word.lower():bacterium
+4.799132 T        word.lower():anticoagulants
+
+best params:{'c1': 0.29257271972399757, 'c2': 0.01861118796104557}
+best CV score:0.8724118706538637
+model size: 0.42M
+             precision    recall  f1-score   support
+
+          D      0.774     0.663     0.714      2442
+          O      0.940     0.973     0.956     27854
+          T      0.738     0.501     0.597      1950
+
+avg / total      0.915     0.921     0.916     32246
+
+
+Top negative:
+-3.207306 O        +1:word.lower():complex
+-3.212018 O        -1:word.lower():metastases
+-3.722278 O        word[-3:]:tis
+-3.845192 D        word.lower():teratoma
+-4.005503 O        +1:word.lower():represent
+
+Top positive:
+7.061804 T        word.lower():vaccination
+6.088550 T        word.lower():slings
+5.910104 T        word.lower():statins
+5.830422 D        word.lower():obesity
+5.537650 T        word.lower():antidepressants

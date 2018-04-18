@@ -1,0 +1,52 @@
+
+best params:{'c1': 0.41980533704923106, 'c2': 0.057853626935202955}
+best CV score:0.8666524913062312
+model size: 0.34M
+             precision    recall  f1-score   support
+
+          D      0.797     0.626     0.701      2447
+          O      0.938     0.975     0.956     27956
+          T      0.724     0.499     0.591      1871
+
+avg / total      0.915     0.921     0.916     32274
+
+
+Top negative:
+-2.224711 O        word.lower():cancers
+-2.323175 O        word[-3:]:ash
+-2.427731 O        word.lower():antibiotics
+-2.462629 O        +1:word.lower():should
+-2.666003 O        word[-3:]:aly
+
+Top positive:
+5.205245 D        word.lower():hypertension
+5.072728 D        word.lower():infertility
+4.738285 T        word.lower():resection
+4.630574 D        word.lower():bleeding
+4.527172 D        word.lower():cataract
+
+best params:{'c1': 0.09285954500714251, 'c2': 0.005099599730803876}
+best CV score:0.8675044690521811
+model size: 0.45M
+             precision    recall  f1-score   support
+
+          D      0.773     0.639     0.700      2442
+          O      0.937     0.972     0.954     27854
+          T      0.736     0.497     0.594      1950
+
+avg / total      0.912     0.918     0.913     32246
+
+
+Top negative:
+-4.692882 O        word.lower():radiotherapy
+-4.787383 O        word.lower():incontinence
+-4.800238 O        +1:word.lower():represent
+-4.881741 D        -1:word.lower():shock
+-5.935457 O        word[-3:]:tis
+
+Top positive:
+10.294924 D        word.lower():bleeding
+9.792491 D        word.lower():obesity
+9.613596 D        word.lower():cancers
+9.370206 T        word.lower():slings
+9.278005 T        word.lower():stent
